@@ -1,0 +1,109 @@
+const {Client, Intents} = require('discord.js');
+const dotenv = require('dotenv')
+
+
+dotenv.config();
+const client = new Client 
+(
+    {
+        intents : 
+        [
+            Intents.FLAGS.GUILDS,
+            Intents.FLAGS.GUILD_MESSAGES,
+        ]
+    }
+);
+const random_num3 = ()=>
+{
+    return Math.floor(Math.random()* 5);
+}
+const random_num2 = ()=>
+{
+    return Math.floor(Math.random()* 7);
+}
+const random_num1 = ()=>
+{
+    return Math.floor(Math.random()* 2);
+}
+const random_num = ()=>
+{
+    return Math.floor(Math.random()* 10);
+}
+client.on
+('ready',()=>
+    {
+        console.log('Tbar is ready')
+    }
+)
+
+
+client.on('messageCreate', msg=>
+{
+    let Fckingteacher = ['พูดมากไอ่สัส','ต้องตบหัวแป๊ะ','ไอ่เชี่ยนี่กูไม่ไหวแล้วนะ','เป็นควยไรล่ะ','ถามมาได้ไอ่สัส']
+    let foods = ['ก๋วยเตี๋ยว','ข้าวผัด','ผัดกระเพรา','ข้าวมันไก่','ข้าวขาหมู','ผัดซีอิ้ว','พิซซ่า','สปาเก็ตตี้','อาหารเกาหลี','อาหารญี่ปุ่น']
+    let playlol = ['จัดไปเพื่อน','ไม่เล่นเพื่อน','ก็มาดิวะ','ก็มาดี๊','ซักหน่อยดิ๊','กูจะไปอาบน้ำแล้วเพื่อน','กูง่วงนอนแล้วไอ่สัส']
+    let fc = ['ยังเลยเพื่อน','กินแล้วเพื่อน']
+    let friends = ['เอ','ต่อเขต','เป','กานต์','กูเองเพื่อน','เอ','ต่อเขต','กานต์','กูเองเพื่อน','กูเองเพื่อน']
+    if(msg.content == 'ทีบาร์กินข้าวรึยัง')
+    {
+        msg.reply(fc[random_num1()])
+    }
+    if(msg.content == 'ใครโง่ที่สุด')
+    {
+        msg.reply(friends[random_num()])
+    }
+    if(msg.content == 'สวัสดีไอ่โง่')
+    {
+        msg.reply('ว่าไงเพื่อน')
+    }
+    if(msg.content == 'สวัสดีทีบาร์')
+    {
+        msg.reply('ว่าไงเพื่อน')
+    }
+    if(msg.content == 'เล่นแอลกันมั้ยทีบาร์')
+    {
+        msg.reply(playlol[random_num2()])
+    }
+    if(msg.content == 'บอกฝันดีเพื่อนหน่อยทีบาร์')
+    {
+        msg.reply('@everyone ฝันดีเพื่อนๆ')
+    }
+    if(msg.content == 'ไม่หลับไม่นอนหรอทีบาร์')
+    {
+        msg.reply('เสือกควยไร')
+    }
+    if(msg.content == 'กินข้าวกับอะไรดีทีบาร์')
+    {
+        msg.reply(foods[random_num()])
+    }
+    if(msg.content == 'เมื่อไหร่นายกจะลาออก')
+    {
+        msg.reply('กูก็ไม่รู้เหมือนกันเพื่อน')
+    }
+    if(msg.content == 'ต่อเขตจะมีแฟนมั้ยเพื่อน')
+    {
+        msg.reply('กูน่าจะมีก่อนมันว่ะเพื่อน')
+    }
+    if(msg.content == 'ทีบาร์ปลุกเพื่อนๆหน่อย')
+    {
+        msg.reply('@everyone สวัสดีตอนเช้า')
+    }
+    if(msg.content == 'ทีบาร์ไปเที่ยวกันมั้ย')
+    {
+        msg.reply('ควยไร โควิดไอ่สัส')
+    }
+    if(msg.content == 'นิโรธเป็นไงวะทีบาร์')
+    {
+        msg.reply(Fckingteacher[random_num3()])
+    }
+    if(msg.content == 'ส่ง gif ให้หน่อย')
+    {
+        msg.reply()
+    }
+    if(msg.content == 'บ๊ายบายทีบาร์')
+    {
+        msg.reply('บ๊ายบายเพื่อน')
+    }
+
+})
+client.login(process.env.TOKEN)
